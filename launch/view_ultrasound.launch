@@ -1,0 +1,13 @@
+<launch>
+    <!-- Launch rosserial node -->
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py"></node>
+
+    <!-- Publish a static transformation to get the representation in RViz -->
+    <node name="static_tf" pkg="tf" type="static_transform_publisher" args="0 0 0.2 0 0 0 base_link ultrasound 100"></node>
+
+    <!-- Launch RVIZ with the ultrasound configuration -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rodi_example)/rviz/view_ultrasound.rviz" />
+
+    <!-- Launch interactive marker server for cmd_vel -->
+    <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" args="twist_marker_server/cmd_vel:=cmd_vel" output="screen"/>
+</launch>
