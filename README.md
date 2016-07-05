@@ -8,7 +8,7 @@ In order to get this to work, you need to flash your RoDI using [this](https://g
 
 Simply run
 ```
-roslaunch rodi_example view_ultrasound.launch
+roslaunch rodi_example view_ultrasound_serial.launch
 ```
 
 and RViz will open and you will be able to see the Range of the Ultrasonic Sensor and move your RoDI with the intereactiver marker.
