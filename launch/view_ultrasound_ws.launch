@@ -1,6 +1,6 @@
 <launch>
     <!-- Launch rosserial node -->
-    <node name="rodi_ws_node" pkg="rosdi_ws" type="rodi_ws_node.py"></node>
+    <node name="rodi_node" pkg="rodi_robot" type="rodi_node"></node>
 
     <!-- Publish a static transformation to get the representation in RViz -->
     <node name="static_tf" pkg="tf" type="static_transform_publisher" args="0 0 0.2 0 0 0 base_link ultrasound 100"></node>
